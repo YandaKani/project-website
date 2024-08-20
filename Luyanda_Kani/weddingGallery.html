@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <title>Chris the photographer</title>
+
+    <style>
+        
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/*buttons in footer*/
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #052d81;
+  color: white;
+}
+
+.fa-twitter {
+  background: #75bbf1;
+  color: white;
+}
+
+
+
+.fa-linkedin {
+  background: #5ea7c9;
+  color: white;
+}
+
+
+
+.fa-instagram {
+  background: #cb19d1;
+  color: white;
+}
+
+        body {
+          background-image: url('images/360_F_757127418_lomL8p3HOkKeskP5kADtkxz7ShGRLBxv.jpg');
+        }
+        </style>
+
+    <style>
+        p {
+        color: rgb(238, 231, 231);
+       } 
+       div .align{
+           text-align: center;
+       }
+       
+              /* desktop styiling: */
+              @media screen and (max-width:768px){
+                  .banner-top{
+                      text-align: center;
+                  }
+                  .sidebar{
+                      width: 20%;
+                      float: left;
+                  }
+                  .menu {
+                      width: 25%;
+                     float: left;
+                     padding: 15px;
+                 }
+                  .main{
+                      width: 80%;
+                      float: left;
+                      text-align: center;
+                  }
+                  h1{
+                      font-size:40px
+                  }
+               
+             }
+             
+              @media only screen and (max-width:768px) {
+                  /* For mobile phones: */
+                  .banner{
+                      display:none;
+                  }
+                  .sidebar{
+                      width:100%;
+                  }
+                  .menu {
+                      width: 100%;
+                      font-size: 13px;
+                 }
+                  .main{
+                      width:100%;
+                  }
+                  h1{
+                      font-size:24px
+                  }
+                
+                 }
+                 
+
+
+ </style>
+</head>
+<body>
+    <h1><em><p style="color:rgb(110, 109, 109);">Chris the photographer</p></em></h1>
+    <a href="chrisThePhotographer.html" id="rcorners1"> Homepage</a> 
+        <a href="gallery.html" id="rcorners4">gallery</a>
+        <a href="aboutMe.html" id="rcorners2">About Chris</a>   
+        <a href="contactInformation.html" id="rcorners6">Contact Us</a>   <br> <br> <br>
+    
+    
+    
+    <!-- The four columns -->
+<div class="row">
+    <div class="column">
+      <img src="images/Wedding/pexels-asadphoto-1024968.jpg" alt="picture1" style="width:200px;height:100px" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/Wedding/pexels-edwardeyer-679568.jpg" alt="picture2" style="width:200px;height:100px" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/Wedding/pexels-emma-bauso-1183828-2253870.jpg" alt="picture3" style="width:200px;height:100px" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="images/Wedding/pexels-imagestudio-1488312.jpg" alt="picture4" style="width:200px;height:100px" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="images/Wedding/pexels-imagestudio-1488318.jpg" alt="picture5" style="width:200px;height:100px" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="images/Wedding/pexels-imagestudio-949224.jpg" alt="picture6" style="width:200px;height:100px" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="images/Wedding/pexels-jibarofoto-1560303.jpg" alt="picture7" style="width:200px;height:100px" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="images/Wedding/pexels-rocsana99-948185.jpg" alt="picture8" style="width:200px;height:100px" onclick="myFunction(this);">
+      </div>
+    
+  </div>
+  
+  <div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:800px;height:400px">
+    <div id="imgtext"></div>
+  </div>
+  
+  <script>
+  function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
+  </script>
+
+
+    <a href="gallery.html">RETURN TO GALLERY</a>
+
+    <footer>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-instagram"></a>
+
+    </footer>
+    
+</body>
+</html>
